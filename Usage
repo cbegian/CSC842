@@ -1,27 +1,31 @@
 Welcome to TPS (Trivial Port Scanner)
 -------------------------------------
-This application performs a SYN scan on a range of ports at a target IP address that you specify.
-The list of open ports found by the scan is reported. 
+This application operates in one of two modes:
+  1. It can perform a SYN scan on a range of ports at a target IP address (or domain name) 
+  specified by the user. The list of open ports found by the scan is reported. 
+  2. It can perform a traceroute to a target IP address (or domain name) specified by the user.
+  The IPv4 addresses of the machines along the route are printed, one per line.
 
 Prerequisites
 -------------
-1. Currently, TPS only supports Windows platforms. Linux support is anticipated later this summer.
-2. TPS is a Python application. You will need Python 3 (or later) installed on your machine.  You can
+1. Currently, TPS3 only supports Windows and Linux platforms.
+2. TPS3 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
 download the latest version of Python for Windows at: https://www.python.org/downloads/windows/
 3. TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
 be found at: https://scapy.net/download/
 
-To run TPS
+To run TPS3
 ----------
-Download tps.py onto your machine. From a command prompt, change directory to the directory containing
-tps.py, and enter:
+Download tp3s.py onto your machine. From a command prompt, change directory to the directory containing
+tps3py, and enter:
 
-python tps.py
+python tps3.py -h
 
-TPS will start. Follow the on screen prompts to execute SYN scans.
+TPS3 will start in help mode. You can see two mandatory arguments (mode and target) and four optional arguments.
+Some optional arguments are only applicable to SYN scan mode, and some only to traceroute mode.
 
-Things to know
---------------
+Things to Know About the SYN scan
+---------------------------------
 TPS will scan one port, or a range of ports. When scanning a range, you will be prompted to enter the first
 and last ports in the range. TPS will scan every port in the range, includeing the starting and ending port
 numbers that you specify. For example, if you entered the start of the range as port number 100, and the end
@@ -29,3 +33,7 @@ of the reange as port number 103, ports 100, 101, 102, and 103 would be scanned.
 
 Currently, TPS only scans one target IP address. Future versions may scan multiple addresses, and allow the
 user to enter a domain name to scan (instead of having to enter an IPv4 address).
+
+Things to Know About Traceroute
+-------------------------------
+The last IP address in the route reported by traceroute is the IPv4 address of the target.
