@@ -1,38 +1,38 @@
 Welcome to TPS (Trivial Port Scanner)
 -------------------------------------
-This application operates in one of two modes:
+This application operates in one of three modes:
   1. It can perform a SYN scan on a range of ports at a target IP address (or domain name) 
   specified by the user. The list of open ports found by the scan is reported. 
   2. It can perform a traceroute to a target IP address (or domain name) specified by the user.
   The IPv4 addresses of the machines along the route are printed, one per line.
+  3. It can perform a traceroute, followed by a SYN scan of each host along the resulting route.
 
 Prerequisites
 -------------
-1. Currently, TPS3 only supports Windows and Linux platforms.
-2. TPS3 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
+1. TPS5 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
 download the latest version of Python for Windows at: https://www.python.org/downloads/windows/
-3. TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
+32 TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
 be found at: https://scapy.net/download/
 
-To run TPS3
+To run TPS5
 ----------
-Download tp3s.py onto your machine. From a command prompt, change directory to the directory containing
-tps3py, and enter:
+Download tps5.py onto your machine. From a command prompt, change directory to the directory containing
+tps5.py, and enter:
 
-python tps3.py -h
+python tps5.py -h
 
-TPS3 will start in help mode. You can see two mandatory arguments (mode and target) and four optional arguments.
+TPS5 will start in help mode. You will see two mandatory arguments (mode and target) and five optional arguments.
 Some optional arguments are only applicable to SYN scan mode, and some only to traceroute mode.
 
 Things to Know About the SYN scan
 ---------------------------------
-TPS will scan one port, or a range of ports. When scanning a range, you will be prompted to enter the first
-and last ports in the range. TPS will scan every port in the range, includeing the starting and ending port
+TPS5 will scan one port, or a range of ports. When scanning a range, you will be prompted to enter the first
+and last ports in the range. TPS will scan every port in the range, including the starting and ending port
 numbers that you specify. For example, if you entered the start of the range as port number 100, and the end
-of the reange as port number 103, ports 100, 101, 102, and 103 would be scanned.
+of the range as port number 103, ports 100, 101, 102, and 103 would be scanned.
 
-Currently, TPS only scans one target IP address. Future versions may scan multiple addresses, and allow the
-user to enter a domain name to scan (instead of having to enter an IPv4 address).
+New with TPS5, the user has the ability to randomize the order in which the ports will be scanned. This helps
+the port scan avoid detection by the target (a sequential port scan might be flagged by at the target).
 
 Things to Know About Traceroute
 -------------------------------
