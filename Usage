@@ -11,7 +11,7 @@ Prerequisites
 -------------
 1. TPS5 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
 download the latest version of Python for Windows at: https://www.python.org/downloads/windows/
-32 TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
+2. TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
 be found at: https://scapy.net/download/
 
 To run TPS5
