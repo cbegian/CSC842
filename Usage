@@ -9,19 +9,19 @@ This application operates in one of three modes:
 
 Prerequisites
 -------------
-1. TPS5 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
+1. TPS7 is a Python application. You will need Python 3 (or later) installed on your machine.  You can
 download the latest version of Python for Windows at: https://www.python.org/downloads/windows/
 2. TPS uses the Scapy library, so you must have Scapy installed on your machine. Scapy can 
 be found at: https://scapy.net/download/
 
-To run TPS5
+To run TPS7
 ----------
-Download tps5.py onto your machine. From a command prompt, change directory to the directory containing
-tps5.py, and enter:
+Download tps7.py onto your machine. From a command prompt, change directory to the directory containing
+tps7.py, and enter:
 
-python tps5.py -h
+python tps7.py -h
 
-TPS5 will start in help mode. You will see two mandatory arguments (mode and target) and five optional arguments.
+TPS7 will start in help mode. You will see two mandatory arguments (mode and target) and five optional arguments.
 Some optional arguments are only applicable to SYN scan mode, and some only to traceroute mode.
 
 Things to Know About the SYN scan
@@ -31,9 +31,14 @@ and last ports in the range. TPS will scan every port in the range, including th
 numbers that you specify. For example, if you entered the start of the range as port number 100, and the end
 of the range as port number 103, ports 100, 101, 102, and 103 would be scanned.
 
-New with TPS5, the user has the ability to randomize the order in which the ports will be scanned. This helps
-the port scan avoid detection by the target (a sequential port scan might be flagged by at the target).
+New with TPS7, the user has the ability to specify scan targets (IPs or domain names) and ports to be scanned
+in a data file. A sample data file (targetfile.txt) is provided.
 
 Things to Know About Traceroute
 -------------------------------
 The last IP address in the route reported by traceroute is the IPv4 address of the target.
+
+Things to Know About Rscan Mode
+-------------------------------
+Rscan mode runs traceroute, and then performs a SYN scan on each host in the resulting route.
+Starting with TPS7, the user can specify (on the command line) the set of ports to scan for the hosts.
