@@ -1,0 +1,9 @@
+#List of target IPs and port to scan.
+#Each line is of the form: 
+#<IPv4 address|domain name><space><port number><space>...<space><port number>
+#
+# IP 151.101.6.187 is www.target.com
+# Scanning ports 22, 80, 443, and 464 at IP 151.101.6.187
+151.101.6.187 22 80 443 464
+# Scanning ports 22, 80, 443, and 1300 at www.cnn.com
+www.cnn.com 22 80 443 1300
