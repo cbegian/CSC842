@@ -14,3 +14,9 @@ New in this version:
   - The user now has the option to specify scan targets and ports in a data file. 
   - The user may now specify which ports to scan on hosts found by traceroute (rscan mode).
   - The user now has the capability to perform an ICMP or UDP ping against all hosts in a /24 subnet. For example, 192.168.1/24.
+
+Geolocator
+geoloctor.py is the project for Cycle 9.
+  - Geolocation of cellular emitter by using three cell towers (triangualtion).
+  - Uses either RSS values or signal propegation time for distance estimates in triangulation process.
+  
