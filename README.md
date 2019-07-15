@@ -19,4 +19,6 @@ Geolocator
 geoloctor.py is the project for Cycle 9.
   - Geolocation of cellular emitter by using three cell towers (triangualtion).
   - Uses either RSS values or signal propegation time for distance estimates in triangulation process.
+  - Source: geolocator.py
+  - Sample input data file: datafile.txt
   
